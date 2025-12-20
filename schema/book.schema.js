@@ -12,7 +12,7 @@ const Book = new Schema({
         type: Number,
         required:true
     },
-    death_year: {
+    published_year: {
         type: String,
         required: false,
         default: null
@@ -21,7 +21,7 @@ const Book = new Schema({
         type: String,
         required: true
     },
-    bio : {
+    description : {
         type: String,
         required: true
     },
@@ -33,12 +33,8 @@ const Book = new Schema({
         type: String,
         required: true
     },
-    creativity: {
+    published_home: {
         type: String,
-        required: true
-    },
-    region : {
-        type : String,
         required: true
     }
 },
@@ -47,7 +43,7 @@ const Book = new Schema({
     timestamps: true
 })
 
-const AuthorSchema = model("Author", Author)
+const BookSchema = model("Book", Book)
 
 
-module.exports = AuthorSchema
+module.exports = BookSchema
