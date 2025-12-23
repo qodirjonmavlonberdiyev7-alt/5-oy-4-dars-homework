@@ -68,6 +68,11 @@ const Book = new Schema({
         required: true,
         trim: true,
         minLength: [4, "Nashriyot uyi nomi juda qisqa"]
+    },
+    author_id : {
+        type: Schema.ObjectId,
+        ref: "Author",
+        required: true
     }
 },
 {
