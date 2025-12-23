@@ -9,7 +9,7 @@ const Author = new Schema({
         unique: false,
         set: value => value.trim().toLowerCase().split(" ").map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(" "),
         minLength: [5, "Kamida 5 ta harfdan iborat bo'lishi kerak"],
-        match: [/^[a-zA-Z] +$/, "faqat raqam kiriting"],
+        match: [/^[a-zA-Z\sʻʼ’]+$/, "faqat harf kiriting"],
     },
     birth_year: {
         type: Number,
@@ -64,7 +64,11 @@ const Author = new Schema({
 {
     versionKey: false,
     timestamps: true
-})
+}
+)
+Author.statics.findByFullName = function(value){
+    return this.find({full_name: value})
+}
 
 const AuthorSchema = model("Author", Author)
 
