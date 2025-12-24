@@ -29,7 +29,7 @@ const Book = new Schema({
         type: String,
         required: true,
         minLength: [15, "URL kamida 15 ta belgidan iborat bo'lishi lozim"],
-        match: [/^[a-zA-Z0-9@] +$/]
+        match: [/^[a-zA-Z0-9@]+$/]
     },
     description : {
         type: String,

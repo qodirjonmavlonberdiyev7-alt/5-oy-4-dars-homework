@@ -9,7 +9,7 @@ const Author = new Schema({
         unique: false,
         set: value => value.trim().toLowerCase().split(" ").map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(" "),
         minLength: [5, "Kamida 5 ta harfdan iborat bo'lishi kerak"],
-        match: [/^[a-zA-Z\sʻʼ’]+$/, "faqat harf kiriting"],
+        match: [/^[a-zA-Z' ]+$/, "faqat harf kiriting"],
     },
     birth_year: {
         type: Number,
@@ -59,7 +59,12 @@ const Author = new Schema({
     region : {
         type : String,
         required: true
-    }
+    },
+    // book_id : {
+    //     type: Schema.ObjectId,
+    //     ref: "Book",
+    //     required: true
+    // }
 },
 {
     versionKey: false,
