@@ -29,7 +29,7 @@ const Book = new Schema({
         type: String,
         required: true,
         minLength: [15, "URL kamida 15 ta belgidan iborat bo'lishi lozim"],
-        match: [/^[a-zA-Z0-9@]+$/]
+        match: [/^[a-zA-Z0-9@:;//.?-_]+$/]
     },
     description : {
         type: String,
@@ -44,7 +44,7 @@ const Book = new Schema({
         lowercase: true,
         enum: {
             values : [ "historical","drama","horror","romance","detective",
-        "documentary","science","fiction","fantasy","comedy",
+        "documentary","science","fiction","fantasy","comedy","roman",
         "reality","animation","thriller","adventure","novel",
         "poetry","satire","melodrama","action"],
         message: `{VALUE} bunday janr mavjud emas`
@@ -70,7 +70,7 @@ const Book = new Schema({
         minLength: [4, "Nashriyot uyi nomi juda qisqa"]
     },
     author_id : {
-        type: Schema.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: "Author",
         required: true
     }
