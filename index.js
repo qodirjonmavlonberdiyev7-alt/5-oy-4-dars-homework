@@ -3,8 +3,8 @@ const cors = require("cors")
 const connectDB = require("./config/db.config")
 const authorRouter = require("./router/author.routes")
 const bookRouter = require("./router/book.routes")
-const authenticationRouter = require("./router/authentication.routes")
 const errorMiddleware = require("./middleware/error.middleware")
+const authRouter = require("./router/author.routes")
 require("dotenv").config()
 
 
@@ -20,7 +20,7 @@ connectDB()
 //router
 app.use(authorRouter)
 app.use(bookRouter)
-app.use(authenticationRouter)
+app.use(authRouter)
 
 app.use(errorMiddleware)
 

@@ -1,14 +1,11 @@
 const {Router} = require("express")
-const { getAllAuthors, addAuthor, getOneAuthor, updateAuthor, deleteAuthor, search } = require("../controller/author.controller")
-
-const authorRouter = Router()
-
-authorRouter.get("/get_all_authors",getAllAuthors)
-authorRouter.get("/search",search)
-authorRouter.post("/add_author", addAuthor)
-authorRouter.get("/get_one_author/:id", getOneAuthor)
-authorRouter.put("/update_author/:id", updateAuthor)
-authorRouter.delete("/delete_author/:id", deleteAuthor)
+const { register, login } = require("../controller/auth.controller")
 
 
-module.exports = authorRouter
+const authRouter = Router()
+
+authRouter.post("/register",register)
+authRouter.post("/login",login)
+
+
+module.exports = authRouter
