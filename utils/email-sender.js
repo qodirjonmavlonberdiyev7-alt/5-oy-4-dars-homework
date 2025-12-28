@@ -11,6 +11,15 @@ module.exports = async function(code, email){
                 pass: process.env.APP_KEY
             }
         })
+
+
+        await transporter.sendMail({
+            from: "qodirjonmavlonberdiyev7@gmail.com",
+            to: email,
+            subject: "Library verification",
+            text: "Ushbu xabarda tasdiqlash kodi keltirilgan",
+            html: `<b>${code}</b>`
+        })
     } catch (error) {
         throw CustomErrorHandler.BadRequest(error.message)
     }
