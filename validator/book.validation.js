@@ -1,7 +1,7 @@
 const Joi = require("joi")
 
 
-exports.AuthorValidator = function(data){
+exports.BookValidator = function(data){
     try{
         const schema = Joi.object({
             title: Joi.string().min(5).max(120).required(),
@@ -12,6 +12,7 @@ exports.AuthorValidator = function(data){
             genre: Joi.string().valid("historical","drama","horror","romance","detective","documantry","science","fiction","fantasy","commedy","reality","animation","trialler","advanture","novel","poetry","satir","mella dramma","action").required(),
             period: Joi.string().valid("temuriylar davri", "jadid adabiyoti", "sovet davri", "mustaqillik davri").required(),
             published_home: Joi.string().min(4).required(),
+            author_id: Joi.string().max(24).required()
         })
 
 
