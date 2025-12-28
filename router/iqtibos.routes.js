@@ -4,8 +4,8 @@ const authorization = require("../middleware/authorization");
 const { addQuote } = require("../controller/iqtibos.controller");
 
 
-const router = Router();
+const quoteRouter = Router();
 
-router.post("/add_quote", authorization, addQuote);
+quoteRouter.post("/add_quote", authorization, addQuote);
 
-module.exports = router;
+module.exports = quoteRouter;

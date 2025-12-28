@@ -8,6 +8,7 @@ const authRouter = require("./router/auth.routes")
 
 require("dotenv").config()
 const cookieParser = require("cookie-parser")
+const quoteRouter = require("./router/iqtibos.routes")
 
 
 const app = express()
@@ -24,6 +25,7 @@ connectDB()
 app.use(authorRouter)
 app.use(bookRouter)
 app.use(authRouter)
+app.use(quoteRouter)
 
 app.use(errorMiddleware)
 
