@@ -60,11 +60,6 @@ const Author = new Schema({
         type : String,
         required: true
     },
-    // book_id : {
-    //     type: Schema.ObjectId,
-    //     ref: "Book",
-    //     required: true
-    // }
 },
 {
     versionKey: false,

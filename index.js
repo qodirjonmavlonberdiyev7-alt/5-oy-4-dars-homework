@@ -7,11 +7,13 @@ const errorMiddleware = require("./middleware/error.middleware")
 const authRouter = require("./router/auth.routes")
 
 require("dotenv").config()
+const cookieParser = require("cookie-parser")
 
 
 const app = express()
 
 const PORT = process.env.PORT || 3000
+app.use(cookieParser())
 app.use(cors({origin: true, credentials: true}))
 app.use(express.json())
 
