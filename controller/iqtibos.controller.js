@@ -1,4 +1,4 @@
-const QuoteSchema = require("../schema/quote.schema");
+const QuoteSchema = require("../schema/iqtibos.schema");
 
 const addQuote = async (req, res, next) => {
     try {
