@@ -39,9 +39,9 @@ const Author = new Schema({
         required: true,
         toLowerCase: true,
         enum : {
-            values : ["historical","drama","horror","romance","detective","documantry","science","fiction","fantasy","commedy","reality","animation","trialler","advanture","novel","poetry","satir","mella dramma","action"]
+            values : ["historical","drama","horror","romance","detective","documantry","science","fiction","fantasy","commedy","reality","animation","trialler","advanture","novel","poetry","satir","mella dramma","action"],
+            message: `{VALUE} bunday qiymat qabul qilinmaydi`
         },
-        message: `{VALUE} bunday qiymat qabul qilinmaydi`
     },
     period : {
         type: String,
