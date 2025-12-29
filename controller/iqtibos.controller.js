@@ -11,7 +11,7 @@ const addQuote = async (req, res, next) => {
         });
 
         res.status(201).json({
-            message: "Quote added"
+            message: "Iqtibos added"
         });
     } catch (error) {
         next(error);
